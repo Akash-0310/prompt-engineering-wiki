@@ -33,10 +33,10 @@ const Footer = () => {
           </ul>
 
           <div className="footer-social">
-            <a href="#twitter" aria-label="Twitter"><BsTwitterX /></a>
-            <a href="#github" aria-label="GitHub"><BsGithub /></a>
-            <a href="#linkedin" aria-label="LinkedIn"><BsLinkedin /></a>
-            <a href="#youtube" aria-label="YouTube"><BsYoutube /></a>
+            <a href="https://twitter.com/promptwiki" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><BsTwitterX /></a>
+            <a href="https://github.com/promptwiki" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><BsGithub /></a>
+            <a href="https://linkedin.com/company/promptwiki" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><BsLinkedin /></a>
+            <a href="https://youtube.com/@promptwiki" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><BsYoutube /></a>
           </div>
         </div>
 
@@ -67,9 +67,9 @@ const Footer = () => {
           <ul>
             <li><Link to="/contact">Contact Us</Link></li>
             <li><Link to="/faq">Help Center</Link></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
-            <li><a href="#sitemap">Sitemap</a></li>
+            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/terms">Terms of Service</Link></li>
+            <li><Link to="/sitemap">Sitemap</Link></li>
           </ul>
         </div>
       </div>
@@ -99,10 +99,10 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} PromptWiki. All rights reserved. Built with passion for the AI community.</p>
         <div className="footer-bottom-links">
-          <a href="#privacy">Privacy</a>
-          <a href="#terms">Terms</a>
-          <a href="#cookies">Cookies</a>
-          <Link to="/contact">Contact</Link>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
+          <Link to="/cookies">Cookies</Link>
+          <Link to="/sitemap">Sitemap</Link>
         </div>
       </div>
     </footer>

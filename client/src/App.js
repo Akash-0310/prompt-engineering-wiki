@@ -11,6 +11,10 @@ import About from './pages/About';
 import FAQ from './pages/FAQ';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
+import Sitemap from './pages/Sitemap';
 import './App.css';
 
 const ScrollToTop = () => {
@@ -36,6 +40,10 @@ function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
         </main>
         <Footer />
