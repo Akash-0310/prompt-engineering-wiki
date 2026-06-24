@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsLightningCharge, BsTwitterX, BsGithub, BsLinkedin, BsYoutube } from 'react-icons/bs';
+import { FiMail, FiMapPin, FiSend } from 'react-icons/fi';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setSubscribed(true);
+    setEmail('');
+  };
+
   return (
     <footer className="footer">
       <div className="footer-grid">
@@ -15,6 +26,12 @@ const Footer = () => {
             The ultimate knowledge base for prompt engineering. Learn techniques,
             best practices, and advanced strategies to master AI communication.
           </p>
+
+          <ul className="footer-contact">
+            <li><FiMail /> <a href="mailto:hello@promptwiki.com">hello@promptwiki.com</a></li>
+            <li><FiMapPin /> San Francisco, CA · Remote-first</li>
+          </ul>
+
           <div className="footer-social">
             <a href="#twitter" aria-label="Twitter"><BsTwitterX /></a>
             <a href="#github" aria-label="GitHub"><BsGithub /></a>
@@ -57,8 +74,36 @@ const Footer = () => {
         </div>
       </div>
 
+      <div className="footer-newsletter">
+        <div className="footer-newsletter-text">
+          <h4>Stay in the loop</h4>
+          <p>Get new prompt engineering guides, techniques, and updates delivered to your inbox. No spam.</p>
+        </div>
+        {subscribed ? (
+          <p className="footer-subscribe-success">Thanks for subscribing! Check your inbox to confirm.</p>
+        ) : (
+          <form className="footer-subscribe" onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              placeholder="you@example.com"
+              aria-label="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">Subscribe <FiSend /></button>
+          </form>
+        )}
+      </div>
+
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} PromptWiki. All rights reserved. Built with passion for the AI community.</p>
+        <div className="footer-bottom-links">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#cookies">Cookies</a>
+          <Link to="/contact">Contact</Link>
+        </div>
       </div>
     </footer>
   );
